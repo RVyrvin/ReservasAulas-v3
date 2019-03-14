@@ -17,7 +17,7 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Aula;
 
 public class Aulas {
 
-	private static final String NOMBRE_FICHERO_CLIENTES = "ficheros/aulas.dat";
+	private static final String NOMBRE_FICHERO_AULAS = "ficheros/aulas.dat";
 	private List<Aula> coleccionAulas;
 
 	public Aulas() {
@@ -93,7 +93,7 @@ public class Aulas {
 
 	public void leer() {
 		
-		File ficheroAulas = new File(NOMBRE_FICHERO_CLIENTES);
+		File ficheroAulas = new File(NOMBRE_FICHERO_AULAS);
 		try (ObjectInputStream entrada = new ObjectInputStream(new FileInputStream(ficheroAulas))) {
 			Aula aula = null;
 			do {
@@ -116,7 +116,7 @@ public class Aulas {
 
 	public void escribir() {
 		
-		File ficheroAulas = new File(NOMBRE_FICHERO_CLIENTES);
+		File ficheroAulas = new File(NOMBRE_FICHERO_AULAS);
 		try (ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(ficheroAulas))) {
 			for (Aula aula : coleccionAulas)
 				salida.writeObject(aula);
