@@ -1,20 +1,22 @@
 package org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia;
-/*
+
 import static org.junit.Assert.*;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.Permanencia;
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.PermanenciaPorTramo;
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.Tramo;
 import org.junit.Test;
-*/
-public class PermanenciaPorTramoTest {
-/*	
+
+public class PermanenciaPorTramoTest implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	private static final String ERROR_EXCEPCION = "Debería haber saltado la excepción.";
 	private static final String ERROR_NO_EXCEPCION = "No debería haber saltado la excepción.";
-	
-	private static final LocalDate DIA_LD = LocalDate.of(2018, 12, 1); 
+
+	private static final LocalDate DIA_LD = LocalDate.of(2018, 12, 1);
 	private static final String DIA_STR = "01/12/2018";
 	private static final PermanenciaPorTramo PERMANENCIA = new PermanenciaPorTramo(DIA_LD, Tramo.MANANA);
 
@@ -31,7 +33,7 @@ public class PermanenciaPorTramoTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	@Test
 	public void constructorValidoDiaStrTest() {
 		try {
@@ -45,14 +47,14 @@ public class PermanenciaPorTramoTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	@Test
 	public void constructorNoValidoTest() {
 		Permanencia permanencia = null;
 		try {
 			permanencia = new PermanenciaPorTramo(LocalDate.of(2018, 12, 1), null);
 			fail(ERROR_EXCEPCION);
-		} catch (IllegalArgumentException e) {
+		} catch (NullPointerException e) {
 			assertEquals("El tramo de una permanencia no puede ser nulo.", e.getMessage());
 			assertNull(permanencia);
 		}
@@ -60,7 +62,7 @@ public class PermanenciaPorTramoTest {
 			LocalDate dia = null;
 			permanencia = new PermanenciaPorTramo(dia, Tramo.MANANA);
 			fail(ERROR_EXCEPCION);
-		} catch (IllegalArgumentException e) {
+		} catch (NullPointerException e) {
 			assertEquals("El día de una permanencia no puede ser nulo.", e.getMessage());
 			assertNull(permanencia);
 		}
@@ -68,7 +70,7 @@ public class PermanenciaPorTramoTest {
 			String dia = null;
 			permanencia = new PermanenciaPorTramo(dia, Tramo.MANANA);
 			fail(ERROR_EXCEPCION);
-		} catch (IllegalArgumentException e) {
+		} catch (NullPointerException e) {
 			assertEquals("El día de una permanencia no puede ser nulo.", e.getMessage());
 			assertNull(permanencia);
 		}
@@ -81,7 +83,7 @@ public class PermanenciaPorTramoTest {
 			assertNull(permanencia);
 		}
 	}
-	
+
 	@Test
 	public void constructorCopiaValidoTest() {
 		PermanenciaPorTramo otraPermanencia;
@@ -93,30 +95,30 @@ public class PermanenciaPorTramoTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	@Test
 	public void constructoCopiaNoValidoTest() {
 		Permanencia otraPermanencia = null;
 		try {
 			otraPermanencia = new PermanenciaPorTramo(null);
 			fail(ERROR_EXCEPCION);
-		} catch (IllegalArgumentException e) {
+		} catch (NullPointerException e) {
 			assertEquals("No se puede copiar una permanencia nula.", e.getMessage());
 			assertNull(otraPermanencia);
 		}
 	}
-	
+
 	@Test
 	public void getTest() {
 		assertEquals(DIA_LD, PERMANENCIA.getDia());
 		assertEquals(Tramo.MANANA, PERMANENCIA.getTramo());
 	}
-	
+
 	@Test
 	public void getPuntosTest() {
 		assertEquals(10, PERMANENCIA.getPuntos());
 	}
-	
+
 	@Test
 	public void equalsTest() {
 		Permanencia permanencia1 = new PermanenciaPorTramo(DIA_LD, Tramo.MANANA);
@@ -127,7 +129,7 @@ public class PermanenciaPorTramoTest {
 		assertEquals(PERMANENCIA, permanencia1);
 		assertNotEquals(permanencia1, permanencia2);
 	}
-	
+
 	@Test
 	public void hashCodeTest() {
 		Permanencia permanencia1 = new PermanenciaPorTramo(DIA_LD, Tramo.MANANA);
@@ -136,10 +138,10 @@ public class PermanenciaPorTramoTest {
 		assertEquals(PERMANENCIA.hashCode(), permanencia1.hashCode());
 		assertNotEquals(permanencia1.hashCode(), permanencia2.hashCode());
 	}
-	
+
 	@Test
 	public void toStringTest() {
 		assertEquals("[dia=01/12/2018, tramo=Mañana]", PERMANENCIA.toString());
 	}
-*/
+
 }
