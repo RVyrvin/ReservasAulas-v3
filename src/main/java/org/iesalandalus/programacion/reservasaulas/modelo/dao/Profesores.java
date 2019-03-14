@@ -101,9 +101,9 @@ public class Profesores {
 		} catch (ClassNotFoundException e) {
 			System.out.println("No puedo encontrar la clase que tengo que leer.");
 		} catch (FileNotFoundException e) {
-			System.out.println("No puedo abrir el fihero de clientes.");
+			System.out.println("No puedo abrir el fihero de profesores.");
 		} catch (EOFException e) {
-			System.out.println("Fichero clientes leído satisfactoriamente.");
+			System.out.println("Fichero profesores leído satisfactoriamente.");
 		} catch (IOException e) {
 			System.out.println("Error inesperado de Entrada/Salida.");
 		} catch (OperationNotSupportedException e) {
@@ -116,9 +116,9 @@ public class Profesores {
 		try (ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(ficheroProfesores))){
 			for (Profesor profesor : coleccionProfesores)
 				salida.writeObject(profesor);
-			System.out.println("Fichero clientes escrito satisfactoriamente.");
+			System.out.println("Fichero profesores escrito satisfactoriamente.");
 		} catch (FileNotFoundException e) {
-			System.out.println("No puedo crear el fichero de clientes");
+			System.out.println("No puedo crear el fichero de profesores");
 		} catch (IOException e) {
 			System.out.println("Error inesperado de Entrada/Salida");
 		}
