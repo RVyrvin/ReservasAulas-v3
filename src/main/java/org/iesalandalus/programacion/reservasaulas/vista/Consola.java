@@ -18,7 +18,7 @@ public class Consola {
 	private static final DateTimeFormatter FORMATO_DIA = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 	private static final String ERROR = "ERROR: ";
 	private static final String ER_TELEFONO = "[69][0-9]{8}";
-	private static final String ER_CORREO = "\\w[.\\w]*@[a-zA-Z]+\\.[a-zA-Z]{2,5}";
+	//private static final String ER_CORREO = "\\w[.\\w]*@[a-zA-Z]+\\.[a-zA-Z]{2,5}";
 
 	private Consola() {
 	}

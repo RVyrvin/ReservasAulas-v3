@@ -24,7 +24,7 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.Pe
 public class Reservas {
 
 	private static float MAX_PUNTOS_PROFESORES_MES = 200f;
-	private static final String NOMBRE_FICHERO_RESERVAS = "ficheros/reservas.dat";
+	private static final String NOMBRE_FICHERO_RESERVAS = "res/ficheros/reservas.dat";
 	private List<Reserva> coleccionReservas;
 
 	public Reservas() {
@@ -239,7 +239,8 @@ public class Reservas {
 		try (ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(ficheroReservas))){
 			for (Reserva reserva : coleccionReservas)
 				salida.writeObject(reserva);
-			System.out.println("Fichero reservas escrito satisfactoriamente.");
+			System.out.println("\nFichero reservas escrito satisfactoriamente.");
+			System.out.println(ficheroReservas.getAbsolutePath());
 		} catch (FileNotFoundException e) {
 			System.out.println("No puedo crear el fichero de reservas");
 		} catch (IOException e) {

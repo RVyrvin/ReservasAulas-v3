@@ -35,7 +35,7 @@ public class ControladorReservasAulas implements IControladorReservasAulas {
 		modelo.escribirAulas();
 		modelo.escribirProfesores();
 		modelo.escribirReservas();
-		vista.salir();
+		//vista.salir();
 	}
 	
 

@@ -17,7 +17,7 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Aula;
 
 public class Aulas {
 
-	private static final String NOMBRE_FICHERO_AULAS = "ficheros/aulas.dat";
+	private static final String NOMBRE_FICHERO_AULAS = "res/ficheros/aulas.dat";
 	private List<Aula> coleccionAulas;
 
 	public Aulas() {
@@ -111,7 +111,6 @@ public class Aulas {
 		} catch (OperationNotSupportedException e) {
 			System.out.println(e.getMessage());
 		}
-
 	}
 
 	public void escribir() {
@@ -120,7 +119,8 @@ public class Aulas {
 		try (ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(ficheroAulas))) {
 			for (Aula aula : coleccionAulas)
 				salida.writeObject(aula);
-			System.out.println("Fichero clientes escrito satisfactoriamente.");
+			System.out.println("\nFichero clientes escrito satisfactoriamente.");
+			System.out.println(ficheroAulas.getAbsolutePath());
 		} catch (FileNotFoundException e) {
 			System.out.println("No puedo crear el fichero de clientes");
 		} catch (IOException e) {

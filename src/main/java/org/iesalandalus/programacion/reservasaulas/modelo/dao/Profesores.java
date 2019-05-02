@@ -16,7 +16,7 @@ import java.util.List;
 
 public class Profesores {
 
-	private static final String NOMBRE_FICHERO_PROFESORES = "ficheros/profesores.dat";
+	private static final String NOMBRE_FICHERO_PROFESORES = "res/ficheros/profesores.dat";
 	private List<Profesor> coleccionProfesores;
 
 	public Profesores() {
@@ -116,7 +116,8 @@ public class Profesores {
 		try (ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(ficheroProfesores))){
 			for (Profesor profesor : coleccionProfesores)
 				salida.writeObject(profesor);
-			System.out.println("Fichero profesores escrito satisfactoriamente.");
+			System.out.println("\nFichero profesores escrito satisfactoriamente.");
+			System.out.println(ficheroProfesores.getAbsolutePath());
 		} catch (FileNotFoundException e) {
 			System.out.println("No puedo crear el fichero de profesores");
 		} catch (IOException e) {

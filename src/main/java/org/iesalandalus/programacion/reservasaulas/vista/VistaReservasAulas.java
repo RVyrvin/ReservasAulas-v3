@@ -42,6 +42,7 @@ public class VistaReservasAulas implements IVistaReservasAulas {
 
 	@Override
 	public void salir() {
+		controlador.salir();
 		System.out.println("\nHasta luego ...!!!");
 	}
 
